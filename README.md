@@ -30,6 +30,9 @@ And that's it :]
 
 [Check full example's source code](https://github.com/heliomsolivas/heliosCustomSelect/blob/master/example.html).
 
-##Options
+## To-Do
 
-To-do!
+* Options Documentation
+* Settings with data-\*
+* Add dropdown icons
+* Validations
