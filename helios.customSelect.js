@@ -1,17 +1,13 @@
-var selectBox = $(".select__atual");
-var selectOption = $(".select__opcoes__label");
-
-selectBox.click(function() {
-  $(this).toggleClass("open");
-  $(".select__opcoes").toggle();
-});
-
-selectOption.click(function() {
-  var selectName = $(this).text();
-  $(".select__atual__text").text(selectName);
-});
-
 jQuery.fn.customSelect = function(options) {
+  function chooseOption() {
+    var selectOption = $(".select__opcoes__label");
+
+    selectOption.click(function() {
+      var selectName = $(this).text();
+      $(".select__atual__text").text(selectName);
+    });
+  }
+
   function openSelect() {
     var selectBox = $(".select__atual");
 
@@ -21,7 +17,32 @@ jQuery.fn.customSelect = function(options) {
     });
   }
 
-  // Establish our default settings
+  function appendRadios() {}
+
+  function appendOption() {
+    var list = settings.list;
+    var lista = [];
+    var listaIds = [];
+
+    $(list).each(function(i, elem) {
+      var id = elem
+        .replace(/ /g, "")
+        .replace(/[^\w\s]/gi, "")
+        .toLowerCase();
+      console.log(id);
+
+      listaIds.push(
+        `<input type="radio" id="${id}" value="${elem}" name="optSelect">`
+      );
+      lista.push(
+        `<label class="select__opcoes__label" for="${id}">${elem}</label>`
+      );
+    });
+
+    $(".wrapper-select").prepend(listaIds);
+    $(".select__opcoes").append(lista);
+  }
+
   var settings = $.extend(
     {
       border: "1px solid red",
@@ -31,21 +52,7 @@ jQuery.fn.customSelect = function(options) {
     options
   );
 
-  function appendOption() {
-    var list = settings.list;
-    var lista = [];
-
-    $(list).each(function(i, elem) {
-      lista.push(
-        `<label class="select__opcoes__label" for="opt1">${elem}</label>`
-      );
-    });
-
-    $(".select__opcoes").append(lista);
-  }
-
   return this.each(function(i, elem) {
-    // console.log(settings.list);
     $(this)
       .append(
         `<div class="wrapper-select">
@@ -58,13 +65,9 @@ jQuery.fn.customSelect = function(options) {
                   </div>`
       )
       .css("border", settings.border)
+      .click(appendRadios())
       .click(appendOption())
-      .click(openSelect());
+      .click(openSelect())
+      .click(chooseOption());
   });
 };
-
-$("#mySelect").customSelect({
-  border: "1px solid #cecece",
-  defaultText: "Escolha uma opção",
-  list: ["Opção 1", "Opção 2"]
-});

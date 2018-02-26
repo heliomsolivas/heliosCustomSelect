@@ -1,0 +1,35 @@
+.wrapper-select {
+  position: relative;
+  width: 100%;
+}
+.wrapper-select input {
+  display: none;
+}
+.select__atual {
+  height: 50px;
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid;
+  border-color: #cecece;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+.select__atual.open {
+  border-bottom: none;
+}
+.select__opcoes {
+  width: 100%;
+  display: none;
+  border: 1px solid;
+  border-top: none;
+  border-color: #cecece;
+}
+.select__opcoes__label {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+  padding: 0 15px;
+  cursor: pointer;
+}
