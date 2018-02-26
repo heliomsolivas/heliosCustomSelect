@@ -1,26 +1,24 @@
 jQuery.fn.customSelect = function(options) {
-  function chooseOption() {
-    var selectOption = $(".select__opcoes__label");
+  function chooseOption(obj) {
+    var selectOption = obj.find(".select__opcoes__label");
 
     selectOption.click(function() {
       var selectName = $(this).text();
-      $(".select__atual__text").text(selectName);
-      $(".select__opcoes").hide();
+      obj.find(".select__atual__text").text(selectName);
+      obj.find(".select__opcoes").hide();
     });
   }
 
-  function openSelect() {
-    var selectBox = $(".select__atual");
+  function openSelect(obj) {
+    var selectBox = obj.find(".select__atual");
 
     selectBox.click(function() {
       $(this).toggleClass("open");
-      $(".select__opcoes").toggle();
+      obj.find(".select__opcoes").toggle();
     });
   }
 
-  function appendRadios() {}
-
-  function appendOption() {
+  function appendOption(obj) {
     var list = settings.list;
     var lista = [];
     var listaIds = [];
@@ -30,7 +28,6 @@ jQuery.fn.customSelect = function(options) {
         .replace(/ /g, "")
         .replace(/[^\w\s]/gi, "")
         .toLowerCase();
-      console.log(id);
 
       listaIds.push(
         `<input type="radio" id="${id}" value="${elem}" name="optSelect">`
@@ -40,8 +37,8 @@ jQuery.fn.customSelect = function(options) {
       );
     });
 
-    $(".wrapper-select").prepend(listaIds);
-    $(".select__opcoes").append(lista);
+    obj.find(".wrapper-select").prepend(listaIds);
+    obj.find(".select__opcoes").append(lista);
   }
 
   var settings = $.extend(
@@ -74,9 +71,8 @@ jQuery.fn.customSelect = function(options) {
         background: settings.bgColor,
         width: settings.width
       })
-      .click(appendRadios())
-      .click(appendOption())
-      .click(openSelect())
-      .click(chooseOption());
+      .click(appendOption($(this)))
+      .click(openSelect($(this)))
+      .click(chooseOption($(this)));
   });
 };
