@@ -33,3 +33,7 @@
   padding: 0 15px;
   cursor: pointer;
 }
+.select__opcoes__label:hover {
+  color: #222428;
+  background-color: #b8bcc1;
+}

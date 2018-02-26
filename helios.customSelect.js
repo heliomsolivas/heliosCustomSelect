@@ -5,6 +5,7 @@ jQuery.fn.customSelect = function(options) {
     selectOption.click(function() {
       var selectName = $(this).text();
       $(".select__atual__text").text(selectName);
+      $(".select__opcoes").hide();
     });
   }
 
@@ -47,7 +48,10 @@ jQuery.fn.customSelect = function(options) {
     {
       border: "1px solid red",
       list: ["Option 1", "Option 2"],
-      defaultText: "Choose an option"
+      defaultText: "Choose an option",
+      textColor: "#fff",
+      bgColor: "#222428",
+      width: "100%"
     },
     options
   );
@@ -64,7 +68,12 @@ jQuery.fn.customSelect = function(options) {
                   <div class="select__opcoes"></div>
                   </div>`
       )
-      .css("border", settings.border)
+      .css({
+        border: settings.border,
+        color: settings.textColor,
+        background: settings.bgColor,
+        width: settings.width
+      })
       .click(appendRadios())
       .click(appendOption())
       .click(openSelect())
