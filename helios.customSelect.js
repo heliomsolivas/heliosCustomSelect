@@ -23,7 +23,8 @@ jQuery.fn.customSelect = function(options) {
     var lista = [];
     var listaIds = [];
 
-    $(list).each(function(i, elem) {
+    $.each(list, function(i, elem) {
+      
       var id = elem
         .replace(/ /g, "")
         .replace(/[^\w\s]/gi, "")
