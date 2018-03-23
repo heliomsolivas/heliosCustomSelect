@@ -12,7 +12,7 @@ jQuery.fn.customSelect = function(options) {
   function closeSelect(obj) {
     $("body").click(function(event) {
       if (!$(event.target).closest(obj).length) {
-        $(".select__opcoes").hide();
+        obj.find($(".select__opcoes")).hide();
       }
     });
   }

@@ -16,14 +16,17 @@
             display: flex;
             width: 600px;
             margin: 0 auto;
+            flex-direction: column;
         }
     </style>
 </head>
 
 <body>
     <main>
+        <h1>Simple example</h1>
         <div id="mySelect"></div>
-        <!-- <div id="mySelect2"></div> -->
+        <h1>Using Fetch API to populate</h1>
+        <div id="mySelect2"></div>
     </main>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
@@ -31,12 +34,42 @@
 <script src="helios.customSelect.js"></script>
 <script>
     $(document).ready(function () {
+
+        var lista = [];
+
+        fetch('https://swapi.co/api/people')
+            .then(response => response.json()) // retorna uma promise
+            .then(result => {
+                var dados = result.results;
+                var arrayDados = [];
+
+                for (i in dados) {
+                    arrayDados.push(dados[i].name);
+                }
+                var lista = arrayDados.slice();
+
+                $('#mySelect2').customSelect({
+                    border: '1px solid #cecece',
+                    defaultText: 'Escolha uma opção',
+                    list: lista,
+                    icon: '❤'
+                });
+            })
+            .catch(err => {
+                // trata se alguma das promises falhar
+                console.error('Failed retrieving information', err);
+            });
+
         $('#mySelect').customSelect({
             border: '1px solid #cecece',
             defaultText: 'Escolha uma opção',
             list: ['Opção 1', 'Opção 2'],
             icon: '❤'
         });
+
+
+
+
     });
 </script>
 

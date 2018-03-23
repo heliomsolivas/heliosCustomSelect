@@ -40,6 +40,6 @@
   cursor: pointer;
 }
 .select__opcoes__label:hover {
-  color: #222428;
-  background-color: #b8bcc1;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
 }
