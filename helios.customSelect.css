@@ -1,6 +1,7 @@
 .wrapper-select {
   position: relative;
   width: 100%;
+  font-family: "Source Sans Pro", Helvetica, Arial, Sans-Serif;
 }
 .wrapper-select input {
   display: none;
@@ -10,13 +11,18 @@
   width: 100%;
   cursor: pointer;
   border: 1px solid;
-  border-color: #cecece;
   display: flex;
   align-items: center;
   padding: 0 15px;
+  position: relative;
 }
 .select__atual.open {
   border-bottom: none;
+}
+.select__icon {
+  position: absolute;
+  right: 15px;
+  color: #e2264d;
 }
 .select__opcoes {
   width: 100%;

@@ -55,8 +55,9 @@ jQuery.fn.customSelect = function(options) {
       list: ["Option 1", "Option 2"],
       defaultText: "Choose an option",
       textColor: "#fff",
-      bgColor: "#222428",
-      width: "100%"
+      bgColor: "linear-gradient(to right, #0f0c29, #302b63, #24243e)",
+      width: "100%",
+      icon: "❤"
     },
     options
   );
@@ -69,6 +70,7 @@ jQuery.fn.customSelect = function(options) {
                   <span class="select__atual__text">${
                     settings.defaultText
                   }</span>
+                  <span class="select__icon">${settings.icon}</span>
                   </div>
                   <div class="select__opcoes"></div>
                   </div>`
