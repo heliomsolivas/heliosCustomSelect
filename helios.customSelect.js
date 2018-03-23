@@ -9,6 +9,14 @@ jQuery.fn.customSelect = function(options) {
     });
   }
 
+  function closeSelect(obj) {
+    $("body").click(function(event) {
+      if (!$(event.target).closest(obj).length) {
+        $(".select__opcoes").hide();
+      }
+    });
+  }
+
   function openSelect(obj) {
     var selectBox = obj.find(".select__atual");
 
@@ -24,7 +32,6 @@ jQuery.fn.customSelect = function(options) {
     var listaIds = [];
 
     $.each(list, function(i, elem) {
-      
       var id = elem
         .replace(/ /g, "")
         .replace(/[^\w\s]/gi, "")
@@ -74,6 +81,7 @@ jQuery.fn.customSelect = function(options) {
       })
       .click(appendOption($(this)))
       .click(openSelect($(this)))
-      .click(chooseOption($(this)));
+      .click(chooseOption($(this)))
+      .click(closeSelect($(this)));
   });
 };

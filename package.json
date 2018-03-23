@@ -1,0 +1,22 @@
+{
+  "name": "helioscustomselect",
+  "version": "1.0.0",
+  "description": "jQuery plugin to create Custom Select with input type radio",
+  "main": "helios.customSelect.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heliomsolivas/heliosCustomSelect.git"
+  },
+  "keywords": [
+    "jquery-plugin"
+  ],
+  "author": "Hélio M S Olivas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/heliomsolivas/heliosCustomSelect/issues"
+  },
+  "homepage": "https://github.com/heliomsolivas/heliosCustomSelect#readme"
+}
