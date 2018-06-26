@@ -1,5 +1,9 @@
 # Helios Custom Select
 
+## I'm working in vanilla version
+
+### if you are interested in contribute, take a look inside the file helios.customSelect.vanilla.js
+
 ## Usage
 
 Include jQuery:
@@ -32,7 +36,7 @@ And that's it :]
 
 ## To-Do
 
-* Options Documentation
-* Settings with data-\*
-* Add dropdown icons
-* Validations
+- Options Documentation
+- Settings with data-\*
+- Add dropdown icons
+- Validations
