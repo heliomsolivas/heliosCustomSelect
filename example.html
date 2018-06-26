@@ -18,6 +18,17 @@
             margin: 0 auto;
             flex-direction: column;
         }
+
+        #mySelectVanilla {
+            border: 1px solid rgb(206, 206, 206);
+            color: rgb(255, 255, 255);
+            background: linear-gradient(to right, rgb(15, 12, 41), rgb(48, 43, 99), rgb(36, 36, 62));
+            width: 100%;
+        }
+
+        .select__opcoes.open {
+            display: block;
+        }
     </style>
 </head>
 
@@ -27,10 +38,13 @@
         <div id="mySelect"></div>
         <h1>Using Fetch API to populate</h1>
         <div id="mySelect2"></div>
+        <h1>Vanilla Version (Under construction)</h1>
+        <div id="mySelectVanilla"></div>
     </main>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
     crossorigin="anonymous"></script>
+<script src="helios.customSelect.vanilla.js"></script>
 <script src="helios.customSelect.js"></script>
 <script>
     $(document).ready(function () {
@@ -69,8 +83,17 @@
 
 
 
-
     });
+</script>
+
+<script>
+    var lista = ['1', '2', '3'];
+    var mySelect = new heliosSelect('#mySelectVanilla', {
+        items: lista,
+    });
+    mySelect.mount();
+
+
 </script>
 
 </html>
