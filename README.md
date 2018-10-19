@@ -4,7 +4,34 @@
 
 ### if you are interested in contribute, take a look inside the file helios.customSelect.vanilla.js
 
-## Usage
+## Usage Vanilla Version
+
+Include the plugin file
+
+```html
+<script src="helios.customSelect.vanilla.js"></script>
+```
+
+Create an element to wrap the select
+
+```html
+<div class="mySelectVanilla"></div>
+```
+
+Call the plugin with or without options:
+
+```javascript
+var heliosCustomSelect = new heliosCustomSelect(".mySelectVanilla", {
+  list: ["Option1", "Option2", "Option3"],
+  defaultOption: "Filter:"
+});
+
+heliosCustomSelect.mount();
+```
+
+[Check full example's source code](https://github.com/heliomsolivas/heliosCustomSelect/blob/master/exampleVanilla.html).
+
+## Usage JQuery Version
 
 Include jQuery:
 
@@ -29,8 +56,6 @@ $("#mySelect").customSelect({
   list: ["Opção 1", "Opção 2"]
 });
 ```
-
-And that's it :]
 
 [Check full example's source code](https://github.com/heliomsolivas/heliosCustomSelect/blob/master/example.html).
 

@@ -29,6 +29,7 @@
         .select__opcoes.open {
             display: block;
         }
+
     </style>
 </head>
 
@@ -39,7 +40,7 @@
         <h1>Using Fetch API to populate</h1>
         <div id="mySelect2"></div>
         <h1>Vanilla Version (Under construction)</h1>
-        <div id="mySelectVanilla"></div>
+        <div class="mySelectVanilla"></div>
     </main>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
@@ -84,15 +85,16 @@
 
 
     });
+
 </script>
 
 <script>
-    var lista = ['1', '2', '3'];
-    var mySelect = new heliosSelect('#mySelectVanilla', {
-        items: lista,
+    var heliosCustomSelect = new heliosCustomSelect(".mySelectVanilla", {
+        list: ['Cod', 'Categoria', 'Produto', 'Preço', 'Status'],
+        defaultOption: 'Filtrar por:'
     });
-    mySelect.mount();
 
+    heliosCustomSelect.mount();
 
 </script>
 
