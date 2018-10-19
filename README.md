@@ -29,6 +29,7 @@ var heliosCustomSelect = new heliosCustomSelect(".mySelectVanilla", {
 heliosCustomSelect.mount();
 ```
 
+[Check the example working here:](https://codepen.io/haykou/pen/Jmvwqx).
 [Check full example's source code](https://github.com/heliomsolivas/heliosCustomSelect/blob/master/exampleVanilla.html).
 
 ## Usage JQuery Version
