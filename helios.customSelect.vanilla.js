@@ -60,8 +60,19 @@ heliosCustomSelect.prototype.mount = function () {
       const element = items[index];
       let radioLabel = selectOpcoes.appendChild(document.createElement("label"));
       radioLabel.className = "select__opcoes__label";
+      radioLabel.setAttribute("tabindex", index + 1);
       radioLabel.setAttribute("for", element);
       radioLabel.textContent = element;
+
+
+
+      radioLabel.onfocus = function (el) {
+        document.addEventListener("keydown", function (e) {
+          if (e.keyCode === 13) {
+
+          }
+        });
+      }
 
       radioLabel.onclick = function () {
         let selectText = this.textContent;
@@ -70,6 +81,8 @@ heliosCustomSelect.prototype.mount = function () {
         document.querySelector('.select__atual').classList.remove('open');
         document.querySelector('.select__opcoes').classList.remove('open');
       };
+
+
 
       let inputRadio = fragWrapper.insertBefore(
         document.createElement("input"),

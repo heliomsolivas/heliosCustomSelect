@@ -39,7 +39,9 @@
   padding: 0 15px;
   cursor: pointer;
 }
-.select__opcoes__label:hover {
+.select__opcoes__label:hover,
+.select__opcoes__label:focus {
   color: #fff;
+  outline: none;
   background-color: rgba(0, 0, 0, 0.7);
 }
