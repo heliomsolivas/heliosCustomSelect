@@ -21,12 +21,10 @@ Create an element to wrap the select
 Call the plugin with or without options:
 
 ```javascript
-var heliosCustomSelect = new heliosCustomSelect(".mySelectVanilla", {
+var mySelect = new heliosCustomSelect(".mySelectVanilla", {
   list: ["Option1", "Option2", "Option3"],
   defaultOption: "Filter:"
 });
-
-heliosCustomSelect.mount();
 ```
 
 [Check the example working here:](https://codepen.io/haykou/pen/Jmvwqx).
@@ -38,14 +36,17 @@ heliosCustomSelect.mount();
 Include jQuery:
 
 ```html
-<script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
-    crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.js"
+  integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+  crossorigin="anonymous"
+></script>
 ```
 
 Include plugin's CSS and JS:
 
 ```html
-<link rel="stylesheet" href="helios.customSelect.css">
+<link rel="stylesheet" href="helios.customSelect.css" />
 <script src="helios.customSelect.js"></script>
 ```
 
