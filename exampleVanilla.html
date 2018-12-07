@@ -37,18 +37,23 @@
     <main>
         <h1>Vanilla Version (Under construction)</h1>
         <div class="mySelectVanilla"></div>
+        <div class="mySelectVanilla2"></div>
+        <div class="mySelectVanilla3"></div>
     </main>
 </body>
 
 <script src="helios.customSelect.vanilla.js"></script>
 
 <script>
-    var heliosCustomSelect = new heliosCustomSelect(".mySelectVanilla", {
+    var select1 = new heliosCustomSelect('.mySelectVanilla', {
         list: ['Cod', 'Categoria', 'Produto', 'Preço', 'Status'],
         defaultOption: 'Filtrar por:'
     });
-
-    heliosCustomSelect.mount();
+    var select2 = new heliosCustomSelect('.mySelectVanilla2', {
+        list: ['Branco', 'Azul', 'Verde'],
+        defaultOption: 'Selecione a cor:'
+    });
+    var ss = new heliosCustomSelect('.mySelectVanilla3');
 
 </script>
 
